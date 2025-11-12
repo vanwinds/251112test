@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 게임</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>2048 게임</h1>
+        
+        <div class="game-container">
+            <div class="score-container">
+                <div class="score-box">
+                    <div class="score-label">점수</div>
+                    <div class="score-value" id="score">0</div>
+                </div>
+            </div>
+            
+            <div class="game-board" id="gameBoard">
+                <!-- 게임 보드가 여기에 동적으로 생성됩니다 -->
+            </div>
+            
+            <div class="game-message" id="gameMessage"></div>
+            
+            <button class="new-game-btn" id="newGameBtn">새 게임</button>
+        </div>
+        
+        <div class="instructions">
+            <h2>게임 방법</h2>
+            <p>화살표 키(↑ ↓ ← →)를 사용하여 타일을 이동하세요.</p>
+            <p>같은 숫자의 타일이 만나면 합쳐져서 숫자가 두 배가 됩니다.</p>
+            <p>2048을 만들면 승리합니다!</p>
+            <p>더 이상 이동할 수 없으면 게임이 끝납니다.</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+

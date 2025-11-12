@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    color: #fff;
+    font-size: 48px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.game-container {
+    background: #bbada0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.score-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.score-box {
+    background: #eee4da;
+    padding: 10px 20px;
+    border-radius: 5px;
+    min-width: 120px;
+}
+
+.score-label {
+    font-size: 14px;
+    color: #776e65;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.score-value {
+    font-size: 28px;
+    color: #776e65;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.game-board {
+    background: #bbada0;
+    border-radius: 6px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.grid-cell {
+    background: rgba(238, 228, 218, 0.35);
+    border-radius: 3px;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    font-weight: bold;
+    color: #776e65;
+}
+
+.tile {
+    position: absolute;
+    width: calc(25% - 12.5px);
+    height: calc(25% - 12.5px);
+    background: #eee4da;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    font-weight: bold;
+    color: #776e65;
+    transition: all 0.15s ease-in-out;
+    animation: appear 0.2s;
+}
+
+@keyframes appear {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.tile-2 {
+    background: #eee4da;
+    color: #776e65;
+    font-size: 35px;
+}
+
+.tile-4 {
+    background: #ede0c8;
+    color: #776e65;
+    font-size: 35px;
+}
+
+.tile-8 {
+    background: #f2b179;
+    color: #f9f6f2;
+    font-size: 35px;
+}
+
+.tile-16 {
+    background: #f59563;
+    color: #f9f6f2;
+    font-size: 35px;
+}
+
+.tile-32 {
+    background: #f67c5f;
+    color: #f9f6f2;
+    font-size: 35px;
+}
+
+.tile-64 {
+    background: #f65e3b;
+    color: #f9f6f2;
+    font-size: 35px;
+}
+
+.tile-128 {
+    background: #edcf72;
+    color: #f9f6f2;
+    font-size: 30px;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.3);
+}
+
+.tile-256 {
+    background: #edcc61;
+    color: #f9f6f2;
+    font-size: 30px;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.4);
+}
+
+.tile-512 {
+    background: #edc850;
+    color: #f9f6f2;
+    font-size: 30px;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.5);
+}
+
+.tile-1024 {
+    background: #edc53f;
+    color: #f9f6f2;
+    font-size: 25px;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.6);
+}
+
+.tile-2048 {
+    background: #edc22e;
+    color: #f9f6f2;
+    font-size: 25px;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.7);
+    animation: win 0.6s;
+}
+
+@keyframes win {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.game-message {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #776e65;
+    min-height: 30px;
+}
+
+.new-game-btn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: #8f7a66;
+    color: #f9f6f2;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.new-game-btn:hover {
+    background: #9f8a76;
+}
+
+.new-game-btn:active {
+    transform: scale(0.95);
+}
+
+.instructions {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.instructions h2 {
+    color: #776e65;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.instructions p {
+    color: #776e65;
+    margin: 10px 0;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 36px;
+    }
+    
+    .tile {
+        font-size: 28px;
+    }
+    
+    .tile-128, .tile-256, .tile-512 {
+        font-size: 24px;
+    }
+    
+    .tile-1024, .tile-2048 {
+        font-size: 20px;
+    }
+}
+
